@@ -64,6 +64,11 @@ kudo.onRemove(function(ele) {
 ### Cookie note
 This implementation stores one cookie for every Kudo given. If someone Kudos everything you put out there you'll eventually hit the maximum number of cookies you're allowed to give them. Because dynamic cookie handling is as unique to your back end as the solution to how you'll keep track of the Kudos given to a thing, this demo-code does not address this limitation. Again, it's trivial enough to do, you just have to decide how you want to do it.
 
+## Compatibility
+_As of 2015-01-11_
+This version fo Kudo should work find on anything that is reasonably up-to-date.
+Though you seem to need vendor-prefixed css for Safari.
+
 ## Improvements
 Make some!  ;)
 The animation of the text isn't bad but could use some love from a css wizard. Pull-requests will be happily applied.
