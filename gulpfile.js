@@ -10,6 +10,7 @@ var rename = require('gulp-rename');
 var autoprefixer = require('gulp-autoprefixer');
 var csso = require('gulp-csso');
 var size = require('gulp-size');
+var uglify = require('gulp-uglify');
 
 
 gulp.task('lint', function() {
@@ -50,7 +51,14 @@ gulp.task('babel', ['lint'], function () {
         .pipe(gulp.dest('./dist'));
 });
 
-gulp.task('default', ['babel', 'style', 'style:prefixed']);
+gulp.task('compress', ['babel'],function() {
+    return gulp.src('./dist/Kudoable.js')
+        .pipe(uglify())
+        .pipe(rename('Kudoable.min.js'))
+        .pipe(gulp.dest('./dist'));
+});
+
+gulp.task('default', ['babel', 'style', 'style:prefixed', 'compress']);
 
 gulp.task('watch', function() {
     gulp.watch('./src/*', ['babel']);
