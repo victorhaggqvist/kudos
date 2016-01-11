@@ -11,6 +11,9 @@ class Kudoable {
 
     constructor(element) {
         this.element = document.querySelector(element);
+        if (this.element === null) {
+            throw `Failed to find an element for "${element}", check the Kudos readme for help`;
+        }
         this.bindEvents();
 
         this.counter = this.element.querySelector('.count .num');
