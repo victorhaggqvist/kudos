@@ -51,3 +51,7 @@ gulp.task('babel', ['lint'], function () {
 });
 
 gulp.task('default', ['babel', 'style', 'style:prefixed']);
+
+gulp.task('watch', function() {
+    gulp.watch('./src/*', ['babel']);
+});
