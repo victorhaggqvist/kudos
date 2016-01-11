@@ -25,11 +25,11 @@ class Kudoable {
     }
 
     isKudoable() {
-        return /kudoable/.test(this.element.className);
+        return this.element.classList.contains('kudoable');
     }
 
     isKudod() {
-        return /complete/.test(this.element.className);
+        return this.element.classList.contains('complete');
     }
 
     start() {
