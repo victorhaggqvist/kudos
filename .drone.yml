@@ -1,0 +1,8 @@
+clone:
+    path: github.com/victorhaggqvist/kudos
+
+build:
+    image: node:5-wheezy
+    commands:
+        - npm install
+        - gulp
