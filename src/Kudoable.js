@@ -34,8 +34,7 @@ class Kudoable {
 
     start() {
         if (this.isKudoable() && !this.isKudod()) {
-            let event = new Event('kudo:active');
-            this.element.dispatchEvent(event);
+            this.element.dispatchEvent(new Event('kudo:active'));
             this.element.classList.add('active');
             return this.timer = setTimeout(this.complete.bind(this), 700);
         }
@@ -46,8 +45,10 @@ class Kudoable {
         this.incrementCount();
         this.element.classList.add('complete');
 
-        let event = new Event('kudo:added');
-        this.element.dispatchEvent(event);
+        this.element.dispatchEvent(new Event('kudo:added'));
+        if (this.onAddedCallback !== undefined) {
+            this.onAddedCallback(this.element);
+        }
     }
 
     end() {
@@ -67,6 +68,9 @@ class Kudoable {
             this.decrementCount();
             this.element.classList.remove('complete');
             this.element.dispatchEvent(new Event('kudo:removed'));
+            if (this.onRemovedCallback !== undefined) {
+                this.onRemovedCallback(this.element);
+            }
         }
     }
 
@@ -86,4 +90,11 @@ class Kudoable {
         this.setCount(this.currentCount() - 1);
     }
 
+    onAdded(func) {
+        this.onAddedCallback= func;
+    }
+
+    onRemoved(func) {
+        this.onRemovedCallback= func;
+    }
 }

@@ -45,6 +45,13 @@
         console.log('Un-Kudo', kudoId);
         Cookies.remove(kudoId);
     }, true);
+
+    k.onAdded(function(ele) {
+        console.log('kudo callback', ele);
+    });
+    k.onRemoved(function(ele) {
+        console.log('un-kudo callback', ele);
+    })
 </script>
 </body>
 </html>

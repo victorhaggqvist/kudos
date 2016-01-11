@@ -49,6 +49,18 @@ After kudoing an object it will emit the following events:
 3. `kudo:added` is sent when you successfully kudo something
 4. `kudo:removed` is sent when you un-kudo something
 
+You may either use these events or use the callbacks for `added` and `removed`.
+
+```js
+var kudo = \\ Kudoable object
+kudo.onAdded(function(ele) {
+    console.log('kudo callback', ele);
+});
+kudo.onRemove(function(ele) {
+    console.log('un-kudo callback', ele);
+});
+```
+
 ### Cookie note
 This implementation stores one cookie for every Kudo given. If someone Kudos everything you put out there you'll eventually hit the maximum number of cookies you're allowed to give them. Because dynamic cookie handling is as unique to your back end as the solution to how you'll keep track of the Kudos given to a thing, this demo-code does not address this limitation. Again, it's trivial enough to do, you just have to decide how you want to do it.
 
