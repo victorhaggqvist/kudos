@@ -12,7 +12,7 @@ Start ->
 -> Finish.
 
 ## Demo
-[here](http://masukomi.github.com/kudos/)
+https://victorhaggqvist.github.io/kudos
 
 # Basic Usage:
 See the index.html example for information
@@ -77,4 +77,4 @@ The animation of the text isn't bad but could use some love from a css wizard. P
 Nope, just js.
 
 ## License
-This code is distributed under the MIT license. Portions of the CSS code are from the [wordpress-svbtle](https://github.com/scavone/wordpress-svbtle) Wordpress theme.
+This code is distributed under the MIT license. Portions of the CSS are from the [wordpress-svbtle](https://github.com/scavone/wordpress-svbtle) Wordpress theme.
